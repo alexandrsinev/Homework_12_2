@@ -2,6 +2,7 @@ import pytest
 
 from utils import arrs, dicts
 
+
 LIST_1 = [1, 2, 3]
 LIST_2 = [1, 2, 3, 4]
 
@@ -12,6 +13,9 @@ def list_fixture1():
 @pytest.fixture
 def list_fixture2():
     return LIST_2
+
+import pytest
+
 
 
 def test_get(list_fixture1):
@@ -24,6 +28,7 @@ def test_slice(list_fixture1, list_fixture2):
     assert arrs.my_slice(list_fixture1, 1) == [2, 3]
     assert arrs.my_slice([]) == []
     assert arrs.my_slice(list_fixture1) == [1, 2, 3]
+
 
 
 def test_get_val():
